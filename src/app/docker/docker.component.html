@@ -1,0 +1,104 @@
+<!-- introduction -->
+<div>
+  <h2>Introduction</h2>
+  <p>
+    Docker is a tool designed to make it easier to create, deploy, and run
+    applications by using containers. Containers allow a developer to package up
+    an application with all of the parts it needs, such as libraries and other
+    dependencies, and ship it all out as one package. By doing so, thanks to the
+    container, the developer can rest assured that the application will run on
+    any other Linux machine regardless of any customized settings that machine
+    might have that could differ from the machine used for writing and testing
+    the code.
+  </p>
+  <p>
+    Containers are not new, but their use for easily deploying applications is.
+    Their use for easily deploying applications is.
+  </p>
+  <p>
+    Docker is a tool designed to make it easier to create, deploy, and run
+    applications by using containers. Containers allow a developer to package up
+    an application with all of the parts it needs, such as libraries and other
+    dependencies, and ship it all out as one package. By doing so, thanks to the
+    container, the developer can rest assured that the application will run on
+    any other Linux machine regardless of any customized settings that machine
+    might have that could differ from the machine used for writing and testing
+    the code.
+  </p>
+  <p>
+    Containers are not new, but their use for easily deploying applications is.
+  </p>
+
+  <div>
+    <h2>Interactive Examples</h2>
+    <p>Try running some Docker commands in the terminal below:</p>
+    <div *ngFor="let example of examples">
+      <h3
+        style="
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: xx-large;
+          display: flex;
+          justify-content: center;
+        "
+      >
+        {{ example.title }}
+      </h3>
+
+      <terminal [prompt]="example.code"></terminal>
+      <!-- the excpected output -->
+      <h3 style="display: block; margin-left: 5em">
+        Normally you should expect an output that looks like this:
+      </h3>
+      <terminal [prompt]="example.output"></terminal>
+    </div>
+  </div>
+
+  <div>
+    <h2>Videos and Screencasts</h2>
+    <p>Check out these videos to learn more about Docker:</p>
+    <div *ngFor="let video of videos">
+      <h3>{{ video.title }}</h3>
+      <video-player
+        [videoUrl]="video.url"
+        [videoTitle]="video.title"
+      ></video-player>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="card">Diagrams and Illustrations</h2>
+    <p>Take a look at these diagrams to better understand how Docker works:</p>
+    <div *ngFor="let diagram of diagrams">
+      <h3>{{ diagram.title }}</h3>
+      <img class="diagram" [src]="diagram.url" alt="{{ diagram.title }}" />
+      <!-- <p>{{ diagram.description }}</p> -->
+    </div>
+  </div>
+
+  <!-- if "quizzenabled" is true display content-->
+  <div *ngIf="quizzenabled">
+    <div class="quiz">
+      <h2>Quizzes and Assessments</h2>
+      <p>Test your knowledge of Docker with these quizzes:</p>
+      <div *ngFor="let quiz of quizzes">
+        <h3>{{ quiz.title }}</h3>
+        <div *ngFor="let question of quiz.questions">
+          <app-multichoicecomponent
+            [question]="question"
+            (answerSelected)="checkQuizAnswer($event, question)"
+          ></app-multichoicecomponent>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- else display a button -->
+  <div *ngIf="!quizzenabled">
+    <button
+      class="quiz-button"
+      (click)="quizzenabled = true"
+      style="display: block; margin-left: auto; margin-right: auto"
+    >
+      Enable Quizzes
+    </button>
+  </div>
+</div>

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+html
+,body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background: #fffff8;
+}
+
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  

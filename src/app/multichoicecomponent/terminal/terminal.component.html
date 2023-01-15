@@ -1,0 +1,11 @@
+<div class="terminal">
+  <div class="terminal-output">
+    <div *ngFor="let command of commands">
+      <p class="prompt">{{ prompt }}</p>
+      <p class="command">{{ command }}</p>
+    </div>
+  </div>
+  <div class="terminal-input">
+    <p class="prompt">{{ prompt }}</p>
+  </div>
+</div>

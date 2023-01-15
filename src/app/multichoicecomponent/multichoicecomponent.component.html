@@ -1,0 +1,13 @@
+<div>
+  <p>{{ question.text }}</p>
+  <div *ngFor="let answer of question.answers; let i = index">
+    <input
+      id="{{ question.text }}-answer-{{ i }}"
+      type="radio"
+      [name]="question.text"
+      [value]="i"
+      (change)="onAnswerSelected(i)"
+    />
+    <label for="{{ question.text }}-answer-{{ i }}">{{ answer }}</label>
+  </div>
+</div>

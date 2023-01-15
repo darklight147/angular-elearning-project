@@ -1,0 +1,18 @@
+.terminal {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #fff;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+  .terminal-output {
+    padding-bottom: 1em;
+  }
+  .prompt {
+    color: #33ff33;
+  }
+  .command {
+    white-space: pre-line;
+  }
