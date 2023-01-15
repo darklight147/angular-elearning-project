@@ -83,6 +83,26 @@ export class BashComponent extends LearningComponent implements OnInit {
         },
       ],
     },
+    {
+      title: 'Bash Advanced',
+      questions: [
+        {
+          text: 'What is the command to remove directory?',
+          answers: ['rmdir', 'remove', 'dir', 'show'],
+          correctAnswer: 0,
+        },
+        {
+          text: 'What is the command to remove file?',
+          answers: ['rm', 'remove', 'file', 'show'],
+          correctAnswer: 0,
+        },
+        {
+          text: 'What is the command to copy file?',
+          answers: ['cp', 'copy', 'file', 'show'],
+          correctAnswer: 0,
+        },
+      ],
+    },
   ];
   public quizzenabled = false;
 
