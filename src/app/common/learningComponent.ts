@@ -16,6 +16,8 @@ export abstract class LearningComponent {
   public abstract videos: Video[];
   public abstract diagrams: Diagram[];
   public abstract quizzes: Quiz[];
+  confettiSettings = { target: 'my-canvas' };
+  confetti: any;
 
   public checkAnswer(answer: string, question: Question): boolean {
     return answer.trim().toLowerCase() === question.text.toLowerCase();

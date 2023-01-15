@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LearningComponent } from '../common/learningComponent';
 import { Question } from '../multichoicecomponent/question.model';
 import { Quiz } from '../multichoicecomponent/quiz.model';
+import ConfettiGenerator from 'confetti-js';
 
 @Component({
   selector: 'app-docker',
@@ -156,7 +157,28 @@ export class DockerComponent extends LearningComponent implements OnInit {
 
   public checkQuizAnswer(answer: number, question: Question): boolean {
     console.log(answer, question);
-    console.log;
-    return answer === question.correctAnswer;
+    console.log(answer === question.correctAnswer);
+    if (answer === question.correctAnswer) {
+      const confettiSettings = {
+        target: 'my-canvas',
+        max: 150,
+        size: 1,
+        animate: true,
+        props: ['square', 'triangle', 'line'],
+        colors: [
+          [165, 104, 246],
+          [230, 61, 135],
+          [0, 199, 228],
+          [253, 214, 126],
+        ],
+        clock: 25,
+      };
+      const confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+
+      return true;
+    } else {
+      return false;
+    }
   }
 }
