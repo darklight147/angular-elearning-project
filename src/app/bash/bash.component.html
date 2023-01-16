@@ -38,7 +38,7 @@
 
   <div>
     <h2>Videos and Screencasts</h2>
-    <p>Check out these videos to learn more about Docker:</p>
+    <p>Check out these videos to learn more about Bash:</p>
     <div *ngFor="let video of videos">
       <h3>{{ video.title }}</h3>
       <video-player
@@ -50,7 +50,7 @@
 
   <div>
     <h2 class="card">Diagrams and Illustrations</h2>
-    <p>Take a look at these diagrams to better understand how Docker works:</p>
+    <p>Take a look at these diagrams to better understand how Bash works:</p>
     <div *ngFor="let diagram of diagrams">
       <h3>{{ diagram.title }}</h3>
       <img class="diagram" [src]="diagram.url" alt="{{ diagram.title }}" />
@@ -62,7 +62,7 @@
   <div *ngIf="quizzenabled">
     <div class="quiz">
       <h2>Quizzes and Assessments</h2>
-      <p>Test your knowledge of Docker with these quizzes:</p>
+      <p>Test your knowledge of Bash with these quizzes:</p>
       <div *ngFor="let quiz of quizzes">
         <h3>{{ quiz.title }}</h3>
         <div *ngFor="let question of quiz.questions">
