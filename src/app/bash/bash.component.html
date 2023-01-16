@@ -2,6 +2,14 @@
 <div>
   <h2>Introduction</h2>
 
+  <p>
+    Bash is a Unix shell and command language written by Brian Fox for the GNU
+    Project as a free software replacement for the Bourne shell. First released
+    in 1989, it has been used widely as the default login shell for most Linux
+    distributions. It has been widely ported to various operating systems,
+    including macOS, and is the default shell on most Android devices.
+  </p>
+
   <div>
     <h2>Interactive Examples</h2>
     <p>Try running some Bash commands in the terminal below:</p>
@@ -19,11 +27,11 @@
 
       <terminal [prompt]="example.code"></terminal>
       <!-- the excpected output -->
-      <h3 style="display: block; margin-left: 5em">
+      <h3 style="display: block; margin-left: 5em" *ngIf="example.output">
         Normally you should expect an output that looks like this:
       </h3>
       <div *ngIf="example.output">
-        <terminal [prompt]="example.output"></terminal>
+        <terminal [prompt]="example.output" [type]="'output'"></terminal>
       </div>
     </div>
   </div>

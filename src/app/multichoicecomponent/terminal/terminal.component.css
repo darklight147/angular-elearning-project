@@ -1,18 +1,43 @@
 .terminal {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #000;
-    color: #fff;
-    padding: 1em;
-    border-radius: 0.5em;
-    margin-right: 1em;
-    margin-left: 1em;
-  }
-  .terminal-output {
-    padding-bottom: 1em;
-  }
-  .prompt {
-    color: #33ff33;
-  }
-  .command {
-    white-space: pre-line;
-  }
+  font-family: "Courier New", Courier, monospace;
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-output {
+  padding-bottom: 1em;
+}
+
+.terminal-input {
+  display: flex;
+}
+
+.prompt {
+  color: #33ff33;
+  padding-right: 0.5em;
+}
+
+.command {
+  white-space: pre-line;
+}
+
+.copy-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.copy-button:hover {
+  background-color: #0069d9;
+}

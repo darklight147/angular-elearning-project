@@ -44,12 +44,12 @@
         {{ example.title }}
       </h3>
 
-      <terminal [prompt]="example.code"></terminal>
+      <terminal [prompt]="example.code" [type]="'input'"></terminal>
       <!-- the excpected output -->
       <h3 style="display: block; margin-left: 5em">
         Normally you should expect an output that looks like this:
       </h3>
-      <terminal [prompt]="example.output"></terminal>
+      <terminal [prompt]="example.output" [type]="'output'"></terminal>
     </div>
   </div>
 
