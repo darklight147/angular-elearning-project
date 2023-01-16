@@ -160,7 +160,7 @@ export class DockerComponent extends LearningComponent implements OnInit {
     console.log(answer === question.correctAnswer);
     if (answer === question.correctAnswer) {
       const confettiSettings = {
-        target: 'my-canvas',
+        target: `canvas-${question.text}`,
         max: 150,
         size: 1,
         animate: true,
@@ -172,6 +172,10 @@ export class DockerComponent extends LearningComponent implements OnInit {
           [253, 214, 126],
         ],
         clock: 25,
+        rotate: false,
+        width: 200,
+        height: 200,
+        start_from_edge: true,
       };
       const confetti = new ConfettiGenerator(confettiSettings);
       confetti.render();
