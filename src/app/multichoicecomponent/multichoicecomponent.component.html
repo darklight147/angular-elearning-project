@@ -2,13 +2,13 @@
   <p>{{ question.text }}</p>
   <div *ngFor="let answer of question.answers; let i = index">
     <input
-      id="{{ question.text }}-answer-{{ i }}"
+      id="{{ question.hash() }}-answer-{{ i }}"
       type="radio"
-      [name]="question.text"
+      [name]="question.hash()"
       [value]="i"
       (change)="onAnswerSelected(i)"
     />
-    <label for="{{ question.text }}-answer-{{ i }}">{{ answer }}</label>
+    <label for="{{ question.hash() }}-answer-{{ i }}">{{ answer }}</label>
   </div>
-  <canvas id="canvas-{{ question.text }}"></canvas>
+  <canvas id="canvas-{{ question.hash() }}"></canvas>
 </div>

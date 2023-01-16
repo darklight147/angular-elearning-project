@@ -71,7 +71,7 @@ export class DockerComponent extends LearningComponent implements OnInit {
           answers: ['docker halt', 'docker stop', 'docker kill', 'docker exit'],
           correctAnswer: 1,
         },
-      ],
+      ].map(Question.from),
     },
     {
       title: 'Docker Networking',
@@ -106,7 +106,7 @@ export class DockerComponent extends LearningComponent implements OnInit {
           ],
           correctAnswer: 0,
         },
-      ],
+      ].map(Question.from),
     },
     {
       title: 'Docker Volumes',
@@ -141,7 +141,7 @@ export class DockerComponent extends LearningComponent implements OnInit {
           ],
           correctAnswer: 2,
         },
-      ],
+      ].map(Question.from),
     },
   ];
 
@@ -158,30 +158,31 @@ export class DockerComponent extends LearningComponent implements OnInit {
   public checkQuizAnswer(answer: number, question: Question): boolean {
     console.log(answer, question);
     console.log(answer === question.correctAnswer);
+    const confettiSettings = {
+      target: `canvas-${question.hash()}`,
+      max: 150,
+      size: 1,
+      animate: true,
+      props: ['square', 'triangle', 'line'],
+      colors: [
+        [165, 104, 246],
+        [230, 61, 135],
+        [0, 199, 228],
+        [253, 214, 126],
+      ],
+      clock: 25,
+      rotate: false,
+      width: 200,
+      height: 200,
+      start_from_edge: true,
+    };
+    const confetti = new ConfettiGenerator(confettiSettings);
     if (answer === question.correctAnswer) {
-      const confettiSettings = {
-        target: `canvas-${question.text}`,
-        max: 150,
-        size: 1,
-        animate: true,
-        props: ['square', 'triangle', 'line'],
-        colors: [
-          [165, 104, 246],
-          [230, 61, 135],
-          [0, 199, 228],
-          [253, 214, 126],
-        ],
-        clock: 25,
-        rotate: false,
-        width: 200,
-        height: 200,
-        start_from_edge: true,
-      };
-      const confetti = new ConfettiGenerator(confettiSettings);
       confetti.render();
 
       return true;
     } else {
+      confetti.clear();
       return false;
     }
   }

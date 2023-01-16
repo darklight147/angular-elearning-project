@@ -1,1 +1,105 @@
-<p>python works!</p>
+<!-- introduction -->
+<div>
+  <h2>Introduction</h2>
+  <p>
+    Python is a powerful, high-level programming language that is widely used
+    for web development, scientific computing, data analysis, artificial
+    intelligence and many other applications. It is known for its simple syntax,
+    readability and ease of use, making it a great choice for beginners and
+    experienced developers alike.
+  </p>
+  <p>
+    Python code is often organized into reusable modules and packages, allowing
+    developers to easily share and reuse code. This makes it a popular choice
+    for building large, complex applications and for working on open-source
+    projects.
+  </p>
+  <p>
+    In addition to its simplicity and readability, Python also has a huge and
+    active community, which means that there are many libraries and frameworks
+    available to developers. This makes it easy to add functionality to your
+    application without having to build everything from scratch.
+  </p>
+  <p>
+    Whether you're a beginner or an experienced developer, Python's versatility
+    and ease of use make it a great choice for a wide range of projects.
+  </p>
+
+  <div>
+    <h2>Interactive Examples</h2>
+    <p>Try running some Docker commands in the terminal below:</p>
+    <div *ngFor="let example of examples">
+      <h3
+        style="
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: xx-large;
+          display: flex;
+          justify-content: center;
+        "
+      >
+        {{ example.title }}
+      </h3>
+
+      <terminal [prompt]="example.code" [type]="'input'"></terminal>
+      <!-- the excpected output -->
+      <h3 style="display: block; margin-left: 5em">
+        Normally you should expect an output that looks like this:
+      </h3>
+      <terminal [prompt]="example.output!" [type]="'output'"></terminal>
+    </div>
+  </div>
+
+  <div>
+    <h2>Videos and Screencasts</h2>
+    <p>Check out these videos to learn more about Docker:</p>
+    <div *ngFor="let video of videos">
+      <h3>{{ video.title }}</h3>
+      <video-player
+        [videoUrl]="video.url"
+        [videoTitle]="video.title"
+      ></video-player>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="card">Diagrams and Illustrations</h2>
+    <p>Take a look at these diagrams to better understand how Docker works:</p>
+    <div *ngFor="let diagram of diagrams">
+      <h3>{{ diagram.title }}</h3>
+      <img
+        class="diagram"
+        height="350"
+        [src]="diagram.url"
+        alt="{{ diagram.title }}"
+      />
+    </div>
+  </div>
+
+  <!-- if "quizzenabled" is true display content-->
+  <div *ngIf="quizzenabled">
+    <div class="quiz">
+      <h2>Quizzes and Assessments</h2>
+      <p>Test your knowledge of Docker with these quizzes:</p>
+      <div *ngFor="let quiz of quizzes">
+        <h3>{{ quiz.title }}</h3>
+        <div *ngFor="let question of quiz.questions">
+          <app-multichoicecomponent
+            [question]="question"
+            (answerSelected)="checkQuizAnswer($event, question)"
+          >
+          </app-multichoicecomponent>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- else display a button -->
+  <div *ngIf="!quizzenabled">
+    <button
+      class="quiz-button"
+      (click)="quizzenabled = true"
+      style="display: block; margin-left: auto; margin-right: auto"
+    >
+      Enable Quizzes
+    </button>
+  </div>
+</div>

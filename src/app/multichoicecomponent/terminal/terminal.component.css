@@ -19,6 +19,7 @@
 }
 
 .prompt {
+  word-wrap: break-word;
   color: #33ff33;
   padding-right: 0.5em;
 }
