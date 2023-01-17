@@ -17,3 +17,9 @@
     background-color: #3e8e41; /* Darker green */
   }
   
+  img.diagram {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* optional - maintains aspect ratio */
+  }
+  

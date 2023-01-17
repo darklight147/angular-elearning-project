@@ -1,0 +1,5 @@
+img.diagram {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* optional - maintains aspect ratio */
+  }
