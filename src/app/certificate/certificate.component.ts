@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import jsPDF from 'jspdf';
 
 @Component({
@@ -7,6 +7,8 @@ import jsPDF from 'jspdf';
   styleUrls: ['./certificate.component.css'],
 })
 export class CertificateComponent {
+  @Input() module!: string;
+
   user = {
     name: 'John Doe',
     email: 'johndoe@example.com',
@@ -22,10 +24,12 @@ export class CertificateComponent {
     doc.setFontSize(15);
     doc.text(`${userName || this.user.name}`, 75, 130);
     doc.text(
-      `For successfully completing the course on: ${new Date().toDateString()}`,
+      `For successfully completing the ${
+        this.module
+      } course on: ${new Date().toDateString()}`,
       25,
       180
     );
-    doc.save(`${this.user.name}-certificate.pdf`);
+    doc.save(`${userName || this.user.name}-certificate.pdf`);
   }
 }
