@@ -10,6 +10,7 @@ import { MultichoicecomponentComponent } from './multichoicecomponent/multichoic
 import { VideoPlayerComponent } from './multichoicecomponent/video-player/video-player.component';
 import { SafePipe } from './safe/safe.pipe';
 import { TerminalComponent } from './multichoicecomponent/terminal/terminal.component';
+import { CertificateComponent } from './certificate/certificate.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TerminalComponent } from './multichoicecomponent/terminal/terminal.comp
     VideoPlayerComponent,
     SafePipe,
     TerminalComponent,
+    CertificateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
