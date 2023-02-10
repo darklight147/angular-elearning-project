@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "serve": "serve -s dist/e-learning",
     "test": "ng test"
   },
   "private": true,
@@ -22,7 +23,8 @@
     "jspdf": "^2.5.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "zone.js": "~0.12.0",
+    "serve": "*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.1.1",
